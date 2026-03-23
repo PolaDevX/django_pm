@@ -1,6 +1,5 @@
-from django import forms
+from django import forms 
 from . import models
-
 attrs = {'class': 'form-control'}
 
 class ProjectCreateForm(forms.ModelForm):

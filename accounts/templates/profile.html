@@ -1,0 +1,38 @@
+{% extends "base.html" %}
+{% load i18n %}
+
+{% block content %}
+<div class="containery">
+    <div class="row justify-content-md-center">
+        <div class="card col-md-6 px-0 shadow-sm">
+            <div class="card-header bg-light">
+                <h3 class="mb-0 py-2 text-center">{% trans "Profile" %}</h3>
+            </div>
+            <div class="card-body">
+                <form method="POST">
+                    {% csrf_token %}
+
+                    <div class="form-group mb-3">
+                        <label for="id_first_name">{% trans "First name" %}</label>
+                        <input type="text" name="first_name" class="form-control" id="id_first_name">
+                    </div>
+
+                    <div class="form-group mb-3">
+                        <label for="id_last_name">{% trans "Last name" %}</label>
+                        <input type="text" name="last_name" class="form-control" id="id_last_name">
+                    </div>
+
+                    <div class="form-group mb-3">
+                        <label for="id_email">{% trans "Email address" %}</label>
+                        <input type="email" name="email" class="form-control" id="id_email" value="pola@example.com">
+                    </div>
+
+                    <button class="btn btn-success btn-block">
+                        {% translate "Save" %}
+                    </button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
